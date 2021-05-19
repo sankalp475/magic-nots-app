@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title></title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link href="css/style.css" rel="stylesheet"> -->
-	</head>
-	<body>
-        <style>
-			*{
-				margin: 0;
-				padding: 0;
-			}
-			h1{
-				margin-top: 30px;
-				padding: 0 0 0 30px;
-				font-family: Arial, Helvetica, sans-serif;
-				text-transform: uppercase;
-			}
-			::-webkit-scrollbar{
-				background: transparent;
-			}
-			::-webkit-scrollbar-corner {
-				background-color: transparent;
-			}
-			div#editable{
-				
-				width: 310px;
-				/* height: 200px; */
-				border: 1px solid #eeeeee;
-				margin: 10px 0 0 30px;
-				/* overflow: scroll; */
-				padding: 10px;
-				font-family: Arial, Helvetica, sans-serif;
-				border: none;
-			}
-			.add{
-				background-color: #eeeeee;
-			}
-		</style>
-	     
-        <div class="container">
-			<h1>Editabe div exercise</h1>
-            <span></span>
-			<div id="editable">
-				<div class="element_item">
-				    <h3 id="itemlist1">item1:<span id="editable-item1"> element1 </span></h3>
-				    <h3 id="itemlist2">item2:<span id="editable-item2"> element2 </span></h3>
-				    <h3 id="itemlist3">item3:<span id="editable-item3"> element3 </span></h3>
-				    <h3 id="itemlist4">item4:<span id="editable-item4"> element4 </span></h3>
-				    <h3 id="itemlist5">item5:<span id="editable-item5"> element5 </span></h3>
-				    <h3 id="itemlist6">item6:<span id="editable-item6"> element6 </span></h3>
-				    <h3 id="itemlist7">item7:<span id="editable-item7"> element7 </span></h3>
-				    <h3 id="itemlist8">item8:<span id="editable-item8"> element8 </span></h3>
-				    <h3 id="itemlist9">item9:<span id="editable-item9"> element9 </span></h3>
-					<div id="setheading3"></div>
-				</div>
-			</div>
+
+<head>
+	<title>Magic nots</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="custome">
+		<a class="navbar-brand" href="#" id="coustom-brand">Magic nots</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse"style="background-color: transparent !important;"  id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto"  style="background-color: transparent !important;">
+				<li class="nav-item active">
+					<a class="nav-link" id="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" style="background-color: transparent !important;">
+				<input class="form-control mr-sm-2 searchtext" id="submit_inp" type="search" placeholder="Search" aria-label="Search" />
+				<button class="btn btn-outline-success my-2 my-sm-0" id="submit_btn" type="submit">
+					Search
+				</button>
+			</form>
 		</div>
-		
+	</nav>
     
-	<script src="index.js"></script>
-	</body>
+
+
+	<div class="container my-4">
+		<h1 class="text-center text-uppercase my7">welcome to magic nots project</h1>
+		<div class="card my-4" id="nots_style">
+            <div class="card-body nots-container ">
+                <h5 class="card-title">Add a note</h5>
+				<input type="text" class="form-control" id="set_nots_title" placeholder="Nots title">
+                <textarea class="form-control my-2" id="Add_nots_text" style="resize: none;" placeholder="Nots description" rows="3"></textarea>
+                <button class="btn btn-primary color-primary" id="AddBtn">Add nots</button>
+           </div>
+        </div>
+	</div>
+
+	
+	<div id="nots" class="container">
+		<h3>Your nots </h3>
+		<div class="row" id="set_nots_card" >
+		</div>
+	</div>
+
+
+	<script src="js/app.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
 </html>
